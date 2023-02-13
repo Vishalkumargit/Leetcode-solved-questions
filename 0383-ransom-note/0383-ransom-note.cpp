@@ -1,12 +1,16 @@
 class Solution {
 public:
-    bool canConstruct(string t, string s) {
-        map<char,int> mp,mp1;
-        for(auto i:s) mp[i]++;
-        for(auto i:t) mp1[i]++;
-        bool flag = true;
-        for(auto i:mp1){
-            if(mp[i.first]<mp1[i.first]) flag=false;
+    bool canConstruct(string ransomNote, string magazine) {
+   
+        
+    bool flag=true;
+    map<char,int> rmap,mmap;
+    for(auto i:ransomNote)rmap[i]++;
+    for(auto j:magazine)mmap[j]++;
+    
+    for(auto i:rmap){
+    if(rmap[i.first]>mmap[i.first])
+        flag=false;
         }
         return flag;
     }
