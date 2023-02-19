@@ -3,9 +3,6 @@ public:
     bool isAnagram(string s, string t) {
         int arr[26]={0};
         
-        int spointer = s[0];
-        int tpointer = t[0];
-        
         if(s.size()!=t.size())return false;
         
         for(int i=0;i<s.size();i++){
