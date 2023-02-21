@@ -1,10 +1,15 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        int n = nums.size(),ans=0;
+        unordered_map<int,int> mp;
+        
         for(int i:nums){
-            ans=ans^i;
+            mp[i]++;
         }
-        return ans;
+        for(auto i:mp){
+            if(i.second==1)
+                return i.first;
+        }
+        return -1;
     }
 };
